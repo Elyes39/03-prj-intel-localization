@@ -1,0 +1,128 @@
+/* Intel Font Family */
+body {
+	font-family: 'Intel Clear', 'Segoe UI', Arial, sans-serif;
+}
+/* Hide details by default, show on hover */
+.details {
+	opacity: 0;
+	max-height: 0;
+	overflow: hidden;
+	transition: opacity 0.3s, max-height 0.3s;
+	background: #e6f2fa;
+	color: #0071C5;
+	margin-top: 12px;
+	padding: 10px 12px;
+	border-radius: 8px;
+	font-size: 0.98em;
+	box-shadow: 0 1px 4px rgba(0,113,197,0.07);
+}
+
+section div:hover .details {
+	opacity: 1;
+	max-height: 100px;
+}
+/* Intel Hero Section Styles */
+header {
+	background: linear-gradient(90deg, #0071C5 60%, #00ADEF 100%);
+	color: #fff;
+	text-align: center;
+	padding: 40px 20px 30px 20px;
+}
+
+header img {
+	width: 120px; /* Resize logo */
+	margin-bottom: 16px;
+}
+
+header h1 {
+	font-size: 2.5em;
+	font-weight: bold;
+	margin: 10px 0 12px 0;
+	letter-spacing: 1px;
+}
+
+header p {
+	font-size: 1.2em;
+	font-weight: 300;
+	margin-bottom: 0;
+}
+
+/* Timeline Section Styles */
+section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+  margin: 40px 0 20px 0;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: #0071C5 #eee;
+  scroll-snap-type: x mandatory;
+}
+section div {
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+	padding: 28px 20px 22px 20px;
+	min-width: 320px;
+	max-width: 400px;
+	/* Removed image height constraint from card container */
+	/* Timeline Card Images: keep all images the same height */
+	img {
+		width: 100%;
+		max-height: 180px;
+		object-fit: cover;
+		border-radius: 8px;
+		margin-bottom: 10px;
+		display: block;
+	}
+	text-align: left;
+	transition: transform 0.3s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
+	position: relative;
+	flex: 0 0 auto;
+	border-left: 6px solid #0071C5;
+	margin-bottom: 8px;
+	scroll-snap-align: start;
+	display: block; /* Ensure images are displayed as block elements */
+}
+
+section div:hover {
+	transform: scale(1.06) rotate(-1deg);
+	box-shadow: 0 8px 32px rgba(0,113,197,0.18), 0 1.5px 8px rgba(0,0,0,0.08);
+	z-index: 2;
+}
+
+section h2 {
+	color: #0071C5;
+	margin-bottom: 4px;
+}
+
+section h3 {
+	margin-top: 0;
+	color: #333;
+}
+
+section p {
+	color: #444;
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+	section {
+		flex-direction: column;
+		align-items: center;
+		overflow-x: visible;
+		gap: 18px;
+	}
+	section div {
+		min-width: 0;
+		max-width: 98vw;
+		width: 98vw;
+		padding: 16px 8px;
+		margin: 0 auto;
+	}
+	header h1 {
+		font-size: 1.5em;
+	}
+}
