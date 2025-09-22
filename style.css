@@ -9,7 +9,7 @@ body {
 	overflow: hidden;
 	transition: opacity 0.3s, max-height 0.3s;
 	background: #e6f2fa;
-	color: #0071C5;
+	color: #004170; /* Darker blue for better contrast */
 	margin-top: 12px;
 	padding: 10px 12px;
 	border-radius: 8px;
@@ -100,22 +100,42 @@ section h2 {
 
 section h3 {
 	margin-top: 0;
-	color: #333;
+	color: #222;
 }
 
 section p {
-	color: #444;
+	color: #222;
 }
 
-/* Enable RTL text flow using Bootstrap and custom override */
-body,
-html[dir="rtl"] {
+/* Style for Learn More links in columns */
+.learn-more-link {
+	margin-top: 10px;
 	direction: rtl;
 }
 
-/* Optional: adjust text alignment for RTL */
-header, section, .details {
+/* Adjust icon spacing for RTL (Bootstrap's .me-1/.me-2 works with RTL, but add if needed) */
+.learn-more-link .bi {
+	vertical-align: middle;
+}
+
+/* Enable RTL text flow only when .rtl class is present on html */
+html.rtl,
+html.rtl body {
+	direction: rtl;
+}
+
+/* Optional: adjust text alignment for RTL only when .rtl is present */
+html.rtl header,
+html.rtl section,
+html.rtl .details {
 	text-align: right;
+}
+
+/* Focus styles for accessibility */
+input:focus, button:focus, .btn:focus, a:focus {
+	outline: 2px solid #0071C5;
+	outline-offset: 2px;
+	box-shadow: 0 0 0 2px #b3e0ff;
 }
 
 /* Responsive Design */
