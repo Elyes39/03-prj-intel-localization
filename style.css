@@ -107,6 +107,17 @@ section p {
 	color: #444;
 }
 
+/* Enable RTL text flow using Bootstrap and custom override */
+body,
+html[dir="rtl"] {
+	direction: rtl;
+}
+
+/* Optional: adjust text alignment for RTL */
+header, section, .details {
+	text-align: right;
+}
+
 /* Responsive Design */
 @media (max-width: 800px) {
 	section {
